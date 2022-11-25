@@ -31,6 +31,7 @@ function getInformation(userID) {
             } else {
                 //setting
                 setAfterLogin(userName, userID);
+                storeID(userID);
 
                 //화면 전환
                 showTag(afterLogin);
@@ -57,4 +58,18 @@ function setAfterLogin(userName, userID) {
     let githubImg = document.createElement("img");
     githubImg.src = userGraphUrl + userID;
     afterLogin.appendChild(githubImg);
+}
+
+function storeID(userID) {
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("userID", userID);
+}
+
+/***********************************************************************************/
+// //가장 먼저 아이디가 있는지 체크
+if (localStorage.getItem("userID")) {
+    setAfterLogin(localStorage.getItem("userName"), localStorage.getItem("userID"));
+
+    showTag(afterLogin);
+    hideTag(beforeLogin, "none");
 }
