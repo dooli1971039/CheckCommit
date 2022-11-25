@@ -1,0 +1,11 @@
+.none{
+    display: none;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+#warning{
+    color:red;
+}
