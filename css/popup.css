@@ -1,0 +1,107 @@
+@import "reset.css";
+:root{
+    --main-text-size:30px;
+}
+body{
+    width:560px;
+    height: 315px;
+    padding:10px 0;
+    border: solid 2px black;
+
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.none{
+    display: none;
+}
+
+.hidden{
+    visibility: hidden;
+}
+/*logo*/
+#logo{
+    font-weight: bold;
+}
+
+
+/*before-login*****************************************************************/
+#part1{
+    width: inherit;
+}
+#before-login{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-id{ 
+    border:none;
+    border-bottom: solid 3px;
+    text-align: center;
+    font-size: var(--main-text-size);
+    font-weight: bold;
+    /*길이 자동 조절은 js로 해야한다네.....*/
+}
+#input-id:focus{
+    outline: none;
+}
+#warning{
+    color:red;
+    margin: 10px 0;
+}
+#login-button{
+    width:150px;
+    height: 40px;
+    border: none;
+}
+
+/*after-login*****************************************************************/
+#part2{
+    width: inherit;
+}
+#after-login{
+    width: inherit;
+}
+#comment{
+    text-align: center;
+    font-size: var(--main-text-size);
+    font-weight: bold;
+}
+.calendar{
+    border: none;
+    text-align: center;
+}
+
+
+/* color-list *****************************************************************/
+#color-list{
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#color-list>li{
+    width:20px;
+    height:20px;
+}
+#color-list>li:nth-child(1){
+    background-color: red;
+}
+#color-list>li:nth-child(2){
+    background-color: yellow;
+}
+#color-list>li:nth-child(3){
+    background-color: green;
+}
+#color-list>li:nth-child(4){
+    background-color: blue;
+}
+#color-list>li:nth-child(5){
+    background-color: black;
+}

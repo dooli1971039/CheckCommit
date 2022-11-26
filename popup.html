@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-    <div id="before-login">
-        <img width="150" src="Big icon.png" alt="plant icon">
-        <form>
-            <input type="text" placeholder="Enter your github ID">
-            <div class="hidden" id="warning">Check your ID</div>
-            <input type="submit" value="Login" id="login">
-        </form>
-    </div>
-    <div id="after-login" class="none">
-        <button id="logout">Logout</button>
-        <div class="calendar">
-            <!-- Loading stuff -->
-            Loading data ...
-        </div>
-    </div>
 
-    <script type="text/javascript" src="popup.js"></script>
-</body>
+    <head>
+        
+                <script
+  src="githubCalendar.js"
+></script>
+        <link
+   rel="stylesheet"
+   href="./css/githubCalendar.css"
+/>
+        <link rel="stylesheet" href="./css/popup.css">
+
+    </head>
+
+    <body>
+        <div id="logo">CheckCommit</div>
+        <div id="part1">
+            <form id="before-login">
+                <input id="input-id" type="text" placeholder="Enter your github ID">
+                <div class="hidden" id="warning">Check your ID</div>
+    
+                <button id="login-button" type="submit">Login</button>
+            </form>
+        </div>
+        <div id="part2" class="none">
+            <div id="after-login">
+                <div id="comment"></div>
+                <div class="calendar">
+                    <!-- Loading stuff -->
+                    Loading data ...
+                </div>
+            </div>
+        </div>
+
+        <ul id="color-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <script type="text/javascript" src="popup.js"></script>
+    </body>
+
 </html>
