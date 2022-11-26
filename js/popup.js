@@ -1,3 +1,4 @@
+import {Color} from "./color.js";
 const part1 = document.querySelector("#part1");
 const inputID = document.querySelector("#input-id");
 const warning = document.querySelector("#warning");
@@ -6,10 +7,15 @@ const loginBtn = document.querySelector("#login-button");
 const part2 = document.querySelector("#part2");
 const comment = document.querySelector("#comment");
 const calendar = document.querySelector(".calendar");
-// const logoutBtn = document.querySelector("#logout");
+
+const colorBtns = document.querySelectorAll("#color-list li");
+const colorType = document.querySelector("style");
+const logoutBtn = document.querySelector("#logout");
 
 loginBtn.addEventListener("click", clickLogin);
 calendar.addEventListener("click", openGithub);
+colorBtns.forEach((item) => item.addEventListener("click", setColor));
+logoutBtn.addEventListener("click", clickLogout);
 
 function clickLogin(event) {
     event.preventDefault();
@@ -33,6 +39,7 @@ function clickLogin(event) {
                 warning.classList.add("hidden");
                 part1.classList.add("none");
                 part2.classList.remove("none");
+                logoutBtn.classList.remove("none");
             }
         })
         .catch(() => {
@@ -54,7 +61,6 @@ function setAfterLogin(id) {
         textList.forEach((item) => item.remove());
 
         /* 위치 조정 */
-        document.querySelector(".calendar").style.minHeight = "70px";
         let cal = document.querySelector("svg>g");
         cal.attributes[0].value = "translate(0,15)";
 
@@ -72,7 +78,7 @@ function setAfterLogin(id) {
         if (lastBlockCount === 0) {
             comment.innerHTML = "COMMIT NOW";
         } else {
-            comment.innerHTML = `you did ${lastBlockCount} commits today`;
+            comment.innerHTML = `You did ${lastBlockCount} commits today`;
         }
     });
 }
@@ -80,6 +86,20 @@ function setAfterLogin(id) {
 function openGithub() {
     const openUrl = `https://github.com/${localStorage.getItem("userID")}`;
     window.open(openUrl);
+}
+
+function setColor(event) {
+    colorType.innerHTML = Color[event.target.id - 1];
+}
+
+function clickLogout() {
+    //localStorage 삭제
+    localStorage.removeItem("userID");
+
+    //화면 전환
+    part1.classList.remove("none");
+    part2.classList.add("none");
+    logoutBtn.classList.add("none");
 }
 
 /*바로 실행**********************************************/

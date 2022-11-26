@@ -90,7 +90,7 @@ var _typeof2 =
                                     e +
                                     "</a>"),
                             (f.cache = 1e3 * (f.cache || 86400)),
-                            !1 === f.global_stats && (d.style.minHeight = "175px");
+                            !1 === f.global_stats && (d.style.minHeight = "70px");
                         var n = {content: "gh_calendar_content." + e, expire_at: "gh_calendar_expire." + e};
                         return (
                             (f.proxy =

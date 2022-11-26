@@ -2,25 +2,33 @@
 <html lang="ko">
 
     <head>
-        
-                <script
-  src="./js/githubCalendar.js"
-></script>
-        <link
-   rel="stylesheet"
-   href="./css/githubCalendar.css"
-/>
-        <link rel="stylesheet" href="./css/popup.css">
 
+        <script src="./js/githubCalendar.js"></script>
+        <link rel="stylesheet" href="./css/githubCalendar.css">
+
+        <link rel="stylesheet" href="./css/popup.css">
+        <style>
+            :root {
+                --bg: #d3fdd1;
+                --color-calendar-graph-day-bg: #dddbdb;
+                --color-calendar-graph-day-L1-bg: #39dd34;
+                --color-calendar-graph-day-L2-bg: #45a045;
+                --color-calendar-graph-day-L3-bg: #047526;
+                --color-calendar-graph-day-L4-bg: #0a4208;
+            }
+        </style>
     </head>
 
     <body>
-        <div id="logo">CheckCommit</div>
+        <div id="top">
+            <div id="logo">CheckCommit</div>
+            <button id="logout" class="none">logout</button>
+        </div>
         <div id="part1">
             <form id="before-login">
                 <input id="input-id" type="text" placeholder="Enter your github ID">
                 <div class="hidden" id="warning">Check your ID</div>
-    
+
                 <button id="login-button" type="submit">Login</button>
             </form>
         </div>
@@ -28,21 +36,20 @@
             <div id="after-login">
                 <div id="comment"></div>
                 <div class="calendar">
-                    <!-- Loading stuff -->
                     Loading data ...
                 </div>
             </div>
         </div>
 
         <ul id="color-list">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li id="1"></li>
+            <li id="2"></li>
+            <li id="3"></li>
+            <li id="4"></li>
+            <li id="5"></li>
         </ul>
 
-        <script type="text/javascript" src="./js/popup.js"></script>
+        <script type="module" src="./js/popup.js"></script>
     </body>
 
 </html>

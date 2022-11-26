@@ -12,6 +12,8 @@ body{
     grid-template-rows: 1fr 4fr 1fr;
     justify-items: center;
     align-items: center;
+    background-color: var(--bg);
+    color: var(--color-calendar-graph-day-L4-bg);
 }
 
 .none{
@@ -21,9 +23,28 @@ body{
 .hidden{
     visibility: hidden;
 }
+
+#top{
+    width: inherit;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+}
+
 /*logo*/
 #logo{
+    grid-column: 2/3;
     font-weight: bold;
+    color: var(--color-calendar-graph-day-L4-bg);
+}
+#logout{
+    width: fit-content;
+    grid-column: 3/4;
+    border: none;
+    border-bottom: solid 1px var(--color-calendar-graph-day-L4-bg);
+    background-color: var(--bg);
+    justify-self: end;
+    margin-right: 20px;
 }
 
 
@@ -41,10 +62,12 @@ body{
 
 #input-id{ 
     border:none;
-    border-bottom: solid 3px;
+    border-bottom: solid 3px var(--color-calendar-graph-day-L4-bg);
     text-align: center;
     font-size: var(--main-text-size);
     font-weight: bold;
+    background-color: var(--bg);
+    color: var(--color-calendar-graph-day-L4-bg);
     /*길이 자동 조절은 js로 해야한다네.....*/
 }
 #input-id:focus{
@@ -58,6 +81,8 @@ body{
     width:150px;
     height: 40px;
     border: none;
+    background-color: var(--color-calendar-graph-day-L4-bg);
+    color: white;
 }
 
 /*after-login*****************************************************************/
@@ -73,7 +98,7 @@ body{
     font-weight: bold;
 }
 .calendar{
-    border: none;
+    /* border: none; */
     text-align: center;
 }
 
@@ -94,7 +119,7 @@ body{
     background-color: red;
 }
 #color-list>li:nth-child(2){
-    background-color: yellow;
+    background-color: orange;
 }
 #color-list>li:nth-child(3){
     background-color: green;
