@@ -2,17 +2,20 @@ const beforeLogin = document.querySelector("#before-login");
 const enterID = beforeLogin.querySelector("input");
 const warning = beforeLogin.querySelector("#warning");
 const afterLogin = document.querySelector("#after-login");
-
-beforeLogin.addEventListener("submit", clickLogin);
+const logoutBtn = document.querySelector("#logout");
 
 let userID = null;
 let userName = null;
 let userUrl = null;
 const userGraphUrl = `https://ghchart.rshah.org/`;
 
+beforeLogin.addEventListener("submit", clickLogin);
+logoutBtn.addEventListener("click", clickLogout);
+
 function clickLogin(event) {
     event.preventDefault();
     userID = enterID.value;
+    enterID.value = ""; //입력창 비우기
     getInformation(userID);
 }
 
@@ -39,6 +42,19 @@ function getInformation(userID) {
                 hideTag(beforeLogin, "none");
             }
         });
+}
+
+function clickLogout(event) {
+    //localStorage 삭제, 변수 초기화
+    localStorage.removeItem("userID");
+    localStorage.removeItem("userName");
+    userID = userName = userUrl = null;
+
+    //afterLogin 하위에 추가한 태그 삭제
+
+    //화면 전환
+    hideTag(afterLogin, "none");
+    showTag(beforeLogin);
 }
 
 function showTag(tag) {
@@ -73,3 +89,7 @@ if (localStorage.getItem("userID")) {
     showTag(afterLogin);
     hideTag(beforeLogin, "none");
 }
+/**
+ * 캘린더 수정하기
+ * 캘린더 색 변환은 어떻게 할 수 있을까나....
+ */
