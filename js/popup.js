@@ -115,4 +115,5 @@ if (checkLocalHostID) {
     warning.classList.add("hidden");
     part1.classList.add("none");
     part2.classList.remove("none");
+    logoutBtn.classList.remove("none");
 }
