@@ -36,10 +36,7 @@ function clickLogin(event) {
                 setAfterLogin(id);
 
                 //화면 전환
-                warning.classList.add("hidden");
-                part1.classList.add("none");
-                part2.classList.remove("none");
-                logoutBtn.classList.remove("none");
+                switchToMainScreen();
             }
         })
         .catch(() => {
@@ -85,7 +82,7 @@ function setAfterLogin(id) {
 
 function openGithub() {
     const openUrl = `https://github.com/${localStorage.getItem("userID")}`;
-    window.open(openUrl);
+    window.open(openUrl); // 새탭으로 열기
 }
 
 function setColor(event) {
@@ -98,6 +95,17 @@ function clickLogout() {
     localStorage.removeItem("userID");
 
     //화면 전환
+    switchToLoginScreen();
+}
+
+function switchToMainScreen(){
+    warning.classList.add("hidden");
+    part1.classList.add("none");
+    part2.classList.remove("none");
+    logoutBtn.classList.remove("none");
+}
+
+function switchToLoginScreen(){
     part1.classList.remove("none");
     part2.classList.add("none");
     logoutBtn.classList.add("none");
@@ -112,8 +120,5 @@ if (checkLocalHostID) {
     setAfterLogin(checkLocalHostID);
 
     //화면 전환
-    warning.classList.add("hidden");
-    part1.classList.add("none");
-    part2.classList.remove("none");
-    logoutBtn.classList.remove("none");
+    switchToMainScreen();
 }
