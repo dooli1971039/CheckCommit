@@ -60,25 +60,46 @@ function setAfterLogin(id) {
         /* 위치 조정 */
         let cal = document.querySelector("svg>g");
         cal.attributes[0].value = "translate(0,15)";
-
-        /* 데이터 처리 및 comment 띄우기*/
-        let parentList = document.querySelectorAll("svg>g>g");
-        let childList = parentList[parentList.length - 1].childNodes;
-        console.log(childList);
-        let lastBlock = childList[childList.length - 2];
-        console.log(lastBlock.dataset); // count, date, level
-
-        let lastBlockDate = lastBlock.dataset.date;
-        let lastBlockCount = Number(lastBlock.dataset.count);
-        console.log(lastBlockDate, lastBlockCount);
-
-        if (lastBlockCount === 0) {
-            comment.innerHTML = "COMMIT NOW";
-        } else {
-            comment.innerHTML = `You did ${lastBlockCount} commits today`;
-        }
     });
+
+    /* 데이터 처리 및 comment 띄우기*/
+    const nowTime = new Date();
+    const commitCheckUrl=`https://api.github.com/users/${id}/events`;
+    fetch(commitCheckUrl)
+        .then((respose) => respose.json())
+        .then((data) => {
+            comment.innerHTML = "COMMIT NOW";
+            data.forEach((issue) => {
+                const time = new Date(Date.parse(issue.created_at));
+                if (isSameDate(nowTime, time)) {
+                    //오늘이면서
+                    const commitType = issue.type;
+                    if (
+                        commitType === "PushEvent" ||
+                        (commitType === "PullRequestEvent" &&
+                            (issue.payload.action === "closed" ||
+                                issue.payload.action === "opened")) ||
+                        commitType === "PullRequestReviewEvent" ||
+                        commitType === "IssueEvent"
+                    ) {
+                        comment.innerHTML = "You did commits today";
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            });
+        });
+    
 }
+
+function isSameDate(nowTime, dataDate){
+    return (
+        nowTime.getFullYear() == dataDate.getFullYear() &&
+        nowTime.getMonth() == dataDate.getMonth() &&
+        nowTime.getDate() == dataDate.getDate()
+    );
+};
 
 function openGithub() {
     const openUrl = `https://github.com/${localStorage.getItem("userID")}`;
