@@ -41,6 +41,7 @@ body{
     width: fit-content;
     grid-column: 3/4;
     border: none;
+    color:var(--color-calendar-graph-day-L4-bg);
     border-bottom: solid 1px var(--color-calendar-graph-day-L4-bg);
     background-color: var(--bg);
     justify-self: end;
