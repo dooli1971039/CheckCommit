@@ -89,7 +89,8 @@ function openGithub() {
 }
 
 function setColor(event) {
-    colorType.innerHTML = Color[event.target.id - 1];
+    localStorage.setItem("color", event.target.id-1);
+    colorType.innerHTML = Color[localStorage.getItem("color")];
 }
 
 function clickLogout() {
@@ -103,6 +104,9 @@ function clickLogout() {
 }
 
 /*바로 실행**********************************************/
+if(localStorage.getItem("color")){ //존재하면 세팅
+    colorType.innerHTML = Color[localStorage.getItem("color")];
+}
 let checkLocalHostID = localStorage.getItem("userID");
 if (checkLocalHostID) {
     setAfterLogin(checkLocalHostID);
