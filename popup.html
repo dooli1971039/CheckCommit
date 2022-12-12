@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
-
     <head>
-
         <script src="./js/githubCalendar.js"></script>
         <link rel="stylesheet" href="./css/githubCalendar.css">
-
         <link rel="stylesheet" href="./css/popup.css">
         <style>
             :root {
@@ -20,10 +17,12 @@
     </head>
 
     <body>
+        <!-- ChcekCommit 헤더 -->
         <div id="top">
             <div id="logo">CheckCommit</div>
-            <button id="logout" class="none">logout</button>
+            <button id="logout" class="none">Logout</button>
         </div>
+        <!-- 로그인 부분 -->
         <div id="part1">
             <form id="before-login">
                 <input id="input-id" type="text" placeholder="Enter your github ID">
@@ -32,15 +31,16 @@
                 <button id="login-button" type="submit">Login</button>
             </form>
         </div>
+        <!-- 메인 부분 -->
         <div id="part2" class="none">
             <div id="after-login">
-                <div id="comment"></div>
+                <div id="comment">COMMIT NOW</div>
                 <div class="calendar">
                     Loading data ...
                 </div>
             </div>
         </div>
-
+        <!-- 색상 선택 부분 -->
         <ul id="color-list">
             <li id="1"></li>
             <li id="2"></li>
