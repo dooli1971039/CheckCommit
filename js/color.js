@@ -24,12 +24,12 @@ const Color = [
         --color-calendar-graph-day-L4-bg: #0a4208;
       }`,
     `:root {
-        --bg:#b0e6ff;
-        --color-calendar-graph-day-bg: #dddbdb;
-        --color-calendar-graph-day-L1-bg: #9bc3cc;
-        --color-calendar-graph-day-L2-bg: #5bb8bf;
-        --color-calendar-graph-day-L3-bg: #0d737a;
-        --color-calendar-graph-day-L4-bg: #014950;
+        --bg:#e0f3ff;
+        --color-calendar-graph-day-bg: #EAEDF0;
+        --color-calendar-graph-day-L1-bg: #B6E3FF;
+        --color-calendar-graph-day-L2-bg: #53AEFE;
+        --color-calendar-graph-day-L3-bg: #0968DA;
+        --color-calendar-graph-day-L4-bg: #0A3069;
       }`,
     `:root {
         --bg:#ffffff;
