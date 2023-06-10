@@ -38,7 +38,7 @@ function clickLogin(event) {
     fetch(checkUrl)
         .then((response) => response.json())
         .then((data) => {
-            if (data.name == null) {
+            if (!data.login) {
                 // 아이디 잘못 입력 시
                 warning.classList.remove("hidden"); // warning 메세지
             } else {
