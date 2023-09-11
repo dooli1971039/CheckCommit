@@ -6,7 +6,7 @@
 
 ## 개요
 
-참여자 : 이진경 ([@dooli1971039](https://github.com/dooli1971039)) - 개발, 권승연([@seungyeon](https://github.com/kwon-seungyeon)) - UI  
+참여자 : 이진경 ([@dooli1971039](https://github.com/dooli1971039)) - 개발, 권승연([@seungyeon](https://github.com/kwon-seungyeon)) - UI 조언  
 개발 언어 : HTML, CSS, JS  
 개발 기간 : 2022.11 ~ 2022.12
 
@@ -23,8 +23,3 @@
 
 ![image](https://user-images.githubusercontent.com/70802352/208286498-e3b5a13f-fb9f-42bb-aba3-a5e9c84c0460.png)
 ![image](https://user-images.githubusercontent.com/70802352/208286545-a18f4454-5d82-4f40-9460-758437e76dff.png)
-
-## 비고
-
--   색상, 폰트, 로고 수정 예정
--   수정 이후 크롬 웹스토어에 올릴 예정
